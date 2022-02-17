@@ -1,0 +1,33 @@
+
+<launch>
+
+    <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find kobuki_gazebo)/kobuki_description/urdf/kobuki_standalone.urdf.xacro'"/>
+
+
+    <!--Robot # 1-->
+    <group ns="robot1">
+        <param name="tf_prefix" value="robot1_tf"/>
+        <include file="$(find multiple_turtlebots_sim)/launch/one_robot.launch">
+            <arg name="init_pose" value="-x 3 -y 1 -z 0"/>
+            <arg name="robot_name" value="Robot1"/>
+        </include>        
+    </group>
+
+    <!--Robot # 2-->
+    <group ns="robot2">
+        <param name="tf_prefix" value="robot2_tf"/>
+        <include file="$(find multiple_turtlebots_sim)/launch/one_robot.launch">
+            <arg name="init_pose" value="-x -4 -y 1 -z 0"/>
+            <arg name="robot_name" value="Robot2"/>
+        </include>        
+    </group>
+
+    <!--Robot # 3-->
+    <group ns="robot3">
+        <param name="tf_prefix" value="robot3_tf"/>
+        <include file="$(find multiple_turtlebots_sim)/launch/one_robot.launch">
+            <arg name="init_pose" value="-x 1 -y -6 -z 0"/>
+            <arg name="robot_name" value="Robot3"/>
+        </include>        
+    </group>
+</launch>

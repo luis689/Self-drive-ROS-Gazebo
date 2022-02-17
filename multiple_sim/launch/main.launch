@@ -1,0 +1,16 @@
+
+<launch>
+
+   <param name="/use_sim_time" value="true"/> 
+
+   <!--Iniciar mundo-->
+
+   <node name="gazebo" pkg="gazebo_ros" type="gazebo"
+   args="$(find simulacion_kobuki)/worlds/city.world"  respawn="false" output="screen"/>
+
+   <!--Ingresar los robots-->
+   <include file="$(find multiple_turtlebots_sim)/launch/robots.launch"/>
+   
+   
+
+</launch>

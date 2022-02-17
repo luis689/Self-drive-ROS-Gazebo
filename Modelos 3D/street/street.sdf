@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<sdf version="1.5">
+    <model name="Street">
+        <static>true</static>
+        <link name="street_link">
+            <collision name="street_collision">
+                <geometry>
+                    <mesh>
+                        <uri>model://street/meshes/model.dae</uri>
+			<scale>0.205 0.205 0.205 </scale>
+                    </mesh>
+                </geometry>
+            </collision>
+
+            <visual name="street_mesh">
+                <cast_shadows>false</cast_shadows>
+                <geometry>
+                    <mesh>
+                        <uri>model://street/meshes/model.dae</uri>
+			<scale>0.205 0.205 0.205 </scale>
+                    </mesh>
+                </geometry>
+            </visual>
+        </link>
+    </model>
+</sdf>
+
